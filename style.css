@@ -1,157 +1,206 @@
-/* Importamos fuentes épicas */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&family=Quicksand:wght@300;500&display=swap');
-
 :root {
-    --gold: #d4af37;
-    --gold-bright: #ffdf00;
-    --moria-black: #0f0f0f;
+    --gold: #c5a059;
+    --dark: #0a0a0a;
     --parchment: #f4e4bc;
-    --card-bg: #222;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 body {
-    background-color: var(--moria-black);
-    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); /* Textura de cuero */
-    color: var(--parchment);
+    background-color: var(--dark);
+    color: white;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
-    padding: 0;
     scroll-behavior: smooth;
 }
 
-/* Navbar estilo Élfico */
-.nav-lor {
-    background: rgba(0, 0, 0, 0.9);
-    border-bottom: 2px solid var(--gold);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+#canvas-runas {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+    opacity: 0.2;
 }
 
-.nav-lor ul {
+/* Navbar Pro (Estilo Luca) */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-bottom: 1px solid var(--gold);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 25px;
     margin: 0;
 }
 
-.nav-lor a {
-    color: var(--gold);
-    text-decoration: none;
-    font-family: 'Cinzel', serif;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.nav-lor a:hover {
+.navbar a {
     color: white;
-    text-shadow: 0 0 10px var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
 }
 
-/* Sección Hero (Bienvenida) */
+.navbar a:hover {
+    color: var(--gold);
+}
+
+/* Hero Section */
 .hero {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://wallpaperaccess.com/full/1865147.jpg');
-    background-size: cover;
-    background-position: center;
-    border-bottom: 5px solid var(--gold);
 }
 
 .glow-text {
     font-family: 'Cinzel', serif;
-    font-size: 4rem;
-    color: white;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
-    margin-bottom: 10px;
+    font-size: 4.5rem;
+    text-shadow: 0 0 20px rgba(197, 160, 89, 0.6);
+    margin: 0;
 }
 
-/* Las Cartas de Magic (Mejoradas) */
+.typewriter {
+    font-family: 'MedievalSharp', cursive;
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+.cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Botones Pro */
+.btn-primary {
+    padding: 12px 30px;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: var(--transition);
+    margin-top: 30px;
+}
+
+.btn-primary:hover {
+    background: var(--gold);
+    color: var(--dark);
+    box-shadow: 0 0 20px var(--gold);
+}
+
+/* Cartas MTG con efecto Luca */
 .deck {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
     padding: 50px 20px;
 }
 
 .mtg-card {
-    width: 300px;
-    height: 420px;
-    background: var(--card-bg);
-    border: 12px solid #171717;
-    border-radius: 18px;
-    padding: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-    overflow: hidden;
+    width: 280px;
+    height: 400px;
+    perspective: 1000px;
 }
 
-.mtg-card:hover {
-    transform: translateY(-20px) rotate(2deg);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+.card-inner {
+    background: #1a1a1a;
+    border: 8px solid #222;
+    border-radius: 15px;
+    height: 100%;
+    padding: 10px;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    color: #000;
+}
+
+.mtg-card:hover .card-inner {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4);
+    border-color: var(--gold);
 }
 
 .card-header {
-    background: #e3e3e3;
-    color: #111;
-    font-family: 'MedievalSharp', cursive;
+    background: #ddd;
     padding: 5px 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    font-size: 0.9rem;
 }
 
 .card-art {
-    height: 180px;
-    margin: 8px 0;
-    border: 3px solid #171717;
-    border-radius: 5px;
+    height: 150px;
+    margin: 10px 0;
+    border: 2px solid #000;
     background-size: cover;
     background-position: center;
 }
 
-.card-type {
-    background: #d1d1d1;
-    color: #111;
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
 .card-body {
-    background: #cfb991; /* Color tipo carta antigua */
-    color: #222;
+    background: #cfb991;
     padding: 10px;
-    height: 100px;
-    font-size: 0.85rem;
-    line-height: 1.2;
-    border-radius: 3px;
-    border: 1px solid #888;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    height: 120px;
 }
 
-/* Sección de texto tipo pergamino */
-.parchment {
-    background: #f4e4bc;
-    color: #2c1e0a;
-    padding: 40px;
-    border-radius: 5px;
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-    border: 1px solid #d2b48c;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;
-    position: relative;
+.flavor-text {
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    border-top: 1px solid #8b7355;
+    padding-top: 5px;
+}
+
+/* Footer Estilo Luca */
+.footer {
+    padding: 50px 0;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #333;
+}
+
+.social-links {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--gold);
+    transform: scale(1.2);
 }
