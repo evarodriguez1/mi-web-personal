@@ -117,15 +117,6 @@ body {
 .cursor { animation: blink 0.7s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* MANA SYMBOLS */
-.mana-row { display: flex; gap: 15px; margin-top: 15px; }
-.mana {
-    width: 25px; height: 25px; border-radius: 50%; border: 1px solid #fff;
-}
-.mana.u { background: #0e68ab; box-shadow: 0 0 10px #0e68ab; }
-.mana.b { background: #333; box-shadow: 0 0 10px #fff; }
-.mana.g { background: #106331; box-shadow: 0 0 10px #106331; }
-
 /* --- CONTENEDORES DE SECCIÓN (Glassmorphism estilo Luca) --- */
 .section { padding: 40px 20px; }
 
