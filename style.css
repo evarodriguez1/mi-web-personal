@@ -91,7 +91,7 @@ body {
 
 /* --- HERO SECTION --- */
 .hero {
-    height: 80vh; /* Ajustado para que el Lore asome rápido */
+    height: 70vh; /* Ajustado para que el Lore asome rápido */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,39 +99,52 @@ body {
     text-align: center;
 }
 
+/* --- MARIA EVA RODRIGUEZ --- */
 .glow-text {
     font-family: 'Cinzel', serif;
     font-size: 4rem;
     color: white;
-    text-shadow: 0 0 25px var(--gold);
+    text-shadow: 0 0 20px #000, 0 0 10px var(--gold); /* Sombra negra de fondo para cortar las runas */
+    margin: 0;
+}
+
+/* --- MEJORA DE VISIBILIDAD PARA EL TYPEWRITER --- */
+#typewriter {
+    color: #ffffff; 
+    text-shadow: 
+        0 0 10px var(--gold), 
+        0 0 20px var(--gold), 
+        0 0 30px #ffffff; 
+    font-weight: bold;
+    font-size: 2rem; 
 }
 
 .typewriter-container {
     color: var(--gold);
     font-family: 'MedievalSharp', cursive;
-    font-size: 1.8rem;
-    margin: 20px 0;
-    height: 40px; /* Previene saltos de línea */
+    margin: 10px 0; 
+    height: 50px;
+    z-index: 10; /* Asegura que esté por encima de las runas */
 }
 
 .cursor { animation: blink 0.7s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- CONTENEDORES DE SECCIÓN (Glassmorphism estilo Luca) --- */
-.section { padding: 40px 20px; }
+/* --- CONTENEDORES DE SECCIÓN --- */
+.section { padding: 15px 20px; }
 
 .container-box {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(197, 160, 89, 0.25);
     border-radius: 20px;
-    padding: 50px;
+    padding: 30px 50px;
     max-width: 1000px;
     margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 
-.divider { text-align: center; margin: 50px 0; color: var(--gold); font-size: 1.5rem; }
+.divider { text-align: center; margin: 15px 0; color: var(--gold); font-size: 1.5rem; }
 
 .medieval-title {
     font-family: 'MedievalSharp', cursive;
