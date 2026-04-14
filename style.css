@@ -131,7 +131,7 @@ body {
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 /* --- CONTENEDORES DE SECCIÓN --- */
-.section { padding: 15px 20px; }
+.section { padding: 20px 0 !important; }
 
 .container-box {
     background: var(--glass-bg);
