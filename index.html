@@ -1,159 +1,70 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Eva Rodriguez | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@300;500;700&family=MedievalSharp&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-    <canvas id="canvas-runas"></canvas>
-
-    <nav class="navbar">
-        <div class="logo">M.E.R</div>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#lore">Mi Lore</a></li>
-            <li><a href="#grimorio">Grimorio de Skills</a></li>
-            <li><a href="#travesia">La Travesía</a></li>
-            <li><a href="#contacto">Cuervo</a></li>
-        </ul>
-    </nav>
-
-    <header id="inicio" class="hero">
-        <div class="hero-content">
-            <h1 class="glow-text">MARIA EVA RODRIGUEZ</h1>
-            <div class="typewriter-container">
-                <span id="typewriter"></span><span class="cursor">|</span>
-            </div>
-            <div class="mana-row">
-                <div class="mana u"></div><div class="mana b"></div><div class="mana g"></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- SECCIÓN: MI LORE (Sobre Mí) -->
+<!-- SECCIÓN: MI LORE -->
     <section id="lore" class="section">
         <div class="divider"><i class="fas fa-leaf"></i></div>
-        <div class="container parchment-box">
+        <div class="container-box"> <!-- ESTE ES EL MARCO ESTILO LUCA -->
             <h2 class="medieval-title">Mi Lore</h2>
             <div class="lore-flex">
                 <div class="lore-text">
-                    <p>Soy una <strong>Desarrolladora Backend</strong> con una historia de transmutación. Mi pasado en la Educación Física me dio la disciplina y la fuerza; mi presente en el código me da el poder de crear mundos digitales.</p>
-                    <p>Actualmente forjo mis conocimientos en el <strong>ISAUI</strong> (3er año), especializándome en arquitecturas robustas y bases de datos seguras.</p>
+                    <p>Soy una <strong>Desarrolladora Backend</strong> con una historia de transmutación. Mi pasado en la Educación Física me dio la disciplina; mi presente en el código me da el poder de crear.</p>
+                    <p>Actualmente cursando el 3er año en el <strong>ISAUI</strong>, forjando APIs como si fueran anillos de poder.</p>
                 </div>
                 <div class="lore-photo">
-                    <!-- Poné tu foto aquí -->
-                    <img src="https://via.placeholder.com/200" alt="Maria Eva">
+                    <img src="TU_FOTO_AQUI.jpg" alt="Maria Eva" class="profile-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: GRIMORIO (Habilidades) -->
+    <!-- SECCIÓN: GRIMORIO -->
     <section id="grimorio" class="section">
         <div class="divider"><i class="fas fa-leaf"></i></div>
-        <h2 class="medieval-title center">Grimorio de Skills</h2>
-        <div class="deck">
-            <!-- Carta Java -->
-            <div class="mtg-card">
-                <div class="card-inner">
-                    <div class="card-top">Spring Boot <i class="fab fa-java"></i></div>
-                    <div class="card-pic" style="background-image: url('https://wallpaperaccess.com/full/3909258.jpg')"></div>
-                    <div class="card-info">
-                        <strong>Hechizo — Backend</strong>
-                        <p>Invocación de APIs RESTful y microservicios escalables.</p>
+        <div class="container-box"> <!-- OTRO MARCO -->
+            <h2 class="medieval-title center">Grimorio de Skills</h2>
+            <div class="deck">
+                <!-- Carta Java -->
+                <div class="mtg-card">
+                    <div class="card-inner">
+                        <div class="card-top">Spring Boot <i class="fab fa-java"></i></div>
+                        <div class="card-pic" style="background-image: url('https://wallpaperaccess.com/full/3909258.jpg')"></div>
+                        <div class="card-info">
+                            <p>Invocación de APIs RESTful y microservicios escalables.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Carta SQL -->
-            <div class="mtg-card">
-                <div class="card-inner">
-                    <div class="card-top">Persistencia <span>B</span></div>
-                    <div class="card-pic" style="background-image: url('https://images.tcdn.com.br/img/img_prod/697730/estoque/1594924765_minimo-moria-1.jpg')"></div>
-                    <div class="card-info">
-                        <strong>Encantamiento — Datos</strong>
-                        <p>Gestión avanzada en PostgreSQL y MongoDB.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Carta Frontend -->
-            <div class="mtg-card">
-                <div class="card-inner">
-                    <div class="card-top">Maestría Web <span>U</span></div>
-                    <div class="card-pic" style="background-image: url('https://i.pinimg.com/originals/9b/8e/3c/9b8e3c46e336d3923d376f41443d3171.jpg')"></div>
-                    <div class="card-info">
-                        <strong>Artefacto — Frontend</strong>
-                        <p>Control de HTML5, CSS3 y React para interfaces épicas.</p>
+                <!-- Carta SQL -->
+                <div class="mtg-card">
+                    <div class="card-inner">
+                        <div class="card-top">Persistencia <span>B</span></div>
+                        <div class="card-pic" style="background-image: url('https://images.tcdn.com.br/img/img_prod/697730/estoque/1594924765_minimo-moria-1.jpg')"></div>
+                        <div class="card-info">
+                            <p>Gestión avanzada en PostgreSQL y MongoDB.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: LA TRAVESÍA (Experiencia y Educación) -->
+    <!-- SECCIÓN: LA TRAVESÍA -->
     <section id="travesia" class="section">
         <div class="divider"><i class="fas fa-leaf"></i></div>
-        <h2 class="medieval-title center">La Travesía (Experiencia)</h2>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2023 - 2024</div>
-                <div class="timeline-content">
-                    <h3>Backend Developer - Startup Tío Haze</h3>
-                    <p>Diseño de APIs RESTful con Spring Boot, integración de bases de datos y despliegue en AWS/Azure.</p>
+        <div class="container-box"> <!-- MARCO PARA LA EXPERIENCIA -->
+            <h2 class="medieval-title center">La Travesía</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Backend Developer - Startup Tío Haze</h3>
+                        <p>Diseño de APIs RESTful con Spring Boot y despliegue en AWS.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2022 - 2024</div>
-                <div class="timeline-content">
-                    <h3>WordPress Developer - Freelance</h3>
-                    <p>Creación y optimización de sitios E-commerce y seguridad web.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2006 - 2011</div>
-                <div class="timeline-content">
-                    <h3>Prof. de Educación Física</h3>
-                    <p>Instituto del Movimiento Humano "San Miguel".</p>
+                <div class="timeline-item">
+                    <div class="timeline-date">2006 - 2011</div>
+                    <div class="timeline-content">
+                        <h3>Prof. de Educación Física</h3>
+                        <p>Disciplina y trabajo en equipo aplicados al desarrollo.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- SECCIÓN: CONTACTO (El Cuervo Mensajero) -->
-    <footer id="contacto" class="footer">
-        <div class="divider"><i class="fas fa-leaf"></i></div>
-        
-        <div class="footer-content">
-            <h2 class="medieval-title center">Establecer una Alianza</h2>
-            <p class="footer-intro">¿Buscas una Backend Developer para tu Comunidad del Código? Envíame un cuervo mensajero o contactame a través de mis portales:</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/evarodriguez1" target="_blank" title="GitHub - Grimorio de Código">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/maria-eva-rodriguez-040728103/" target="_blank" title="LinkedIn - Red de Aliados">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="mailto:maevarodriguez1@gmail.com" title="Email - Cuervo Mensajero">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-            </div>
-
-            <div class="footer-bottom">
-                <p class="copyright">© 2024 Maria Eva Rodriguez - Forjado con Mithril y Código</p>
-                <p class="sub-text">"No todos los que vagan están perdidos"</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
