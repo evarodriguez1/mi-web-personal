@@ -78,3 +78,93 @@ body {
 .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .glow-text { font-family: 'Cinzel'; font-size: 4rem; text-shadow: 0 0 20px var(--gold); margin: 0; }
 .typewriter-container { color: var(--gold); font-size: 1.5rem; margin: 20px 0; font-family: 'MedievalSharp'; }
+
+/* --- FOOTER / CONTACTO --- */
+.footer {
+    padding: 60px 20px 40px;
+    background: linear-gradient(to top, #000, #0a0a0a);
+    text-align: center;
+    border-top: 1px solid var(--gold);
+    margin-top: 100px;
+}
+
+.footer-intro {
+    font-size: 1.1rem;
+    color: var(--parchment);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-style: italic;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+.social-links i {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.2));
+}
+
+.social-links span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: translateY(-10px);
+}
+
+.social-links a:hover i {
+    text-shadow: 0 0 20px var(--gold);
+}
+
+.social-links a:hover span {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.copyright {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.sub-text {
+    font-size: 0.75rem;
+    color: #555;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .social-links {
+        gap: 30px;
+    }
+    .social-links i {
+        font-size: 2.2rem;
+    }
+}
