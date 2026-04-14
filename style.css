@@ -1,159 +1,80 @@
 :root {
     --gold: #c5a059;
-    --dark: #050505;
-    --card-gray: #1a1a1a;
+    --dark-bg: #050505;
+    --parchment: #f4e4bc;
 }
-
-* { box-sizing: border-box; }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--dark);
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    overflow-x: hidden;
+    margin: 0; background: var(--dark-bg); color: white;
+    font-family: 'Quicksand', sans-serif; scroll-behavior: smooth;
 }
 
-/* FIX: El Canvas ahora sí se verá */
-#canvas-runas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; /* Detrás de todo */
-    background: black;
-}
+#canvas-runas { position: fixed; top: 0; left: 0; z-index: -1; }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background: rgba(0,0,0,0.8);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    border-bottom: 1px solid var(--gold);
-    z-index: 100;
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
-
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Divisores de Hojas Doradas */
+.divider {
     text-align: center;
-}
-
-.glow-text {
-    font-family: 'Cinzel', serif;
-    font-size: 4rem;
-    color: white;
-    text-shadow: 0 0 20px var(--gold);
-}
-
-.typewriter-container {
-    font-size: 1.5rem;
+    margin: 40px 0;
     color: var(--gold);
-    height: 30px;
-    margin-top: 10px;
+    font-size: 1.5rem;
+    position: relative;
 }
+.divider::before, .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+.divider::before { left: 10%; }
+.divider::after { right: 10%; }
 
-/* Efecto Pergamino (Clean) */
-.parchment {
-    background: #e6d5b8;
-    color: #2c1e0a;
-    padding: 50px;
-    max-width: 700px;
-    margin: 100px auto;
-    border-radius: 2px;
+/* Navbar mejorada */
+.navbar {
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: rgba(0,0,0,0.9); padding: 15px 50px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--gold);
+}
+.navbar ul { display: flex; list-style: none; gap: 30px; margin: 0; }
+.navbar a { color: white; text-decoration: none; font-family: 'Cinzel'; font-size: 0.8rem; transition: 0.3s; }
+.navbar a:hover { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+
+/* Secciones y Pergaminos */
+.section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+.parchment-box {
+    background: var(--parchment); color: #2c1e0a;
+    padding: 40px; border-radius: 8px; border: 2px solid var(--gold);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-left: 5px solid var(--gold);
 }
+.medieval-title { font-family: 'MedievalSharp', cursive; font-size: 2.5rem; margin-bottom: 20px; }
+.medieval-title.center { text-align: center; color: var(--gold); }
 
-.title {
-    font-family: 'Cinzel', serif;
-    margin-bottom: 20px;
+/* Timeline estilo Luca/Medieval */
+.timeline {
+    border-left: 2px solid var(--gold);
+    margin: 40px auto; padding-left: 30px; max-width: 800px;
 }
+.timeline-item { position: relative; margin-bottom: 40px; }
+.timeline-item::before {
+    content: ""; position: absolute; left: -41px; top: 5px;
+    width: 20px; height: 20px; background: var(--dark-bg);
+    border: 2px solid var(--gold); border-radius: 50%;
+}
+.timeline-date { color: var(--gold); font-weight: bold; margin-bottom: 5px; }
+.timeline-content h3 { font-family: 'Cinzel'; margin: 0; color: white; }
 
-/* Cartas MTG */
-.deck {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px;
-    flex-wrap: wrap;
-}
+/* Cartas de Magic (Grimorio) */
+.deck { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.mtg-card { width: 280px; height: 400px; transition: 0.4s; cursor: pointer; }
+.mtg-card:hover { transform: translateY(-15px) rotate(2deg); }
+.card-inner { background: #bbb; height: 100%; border-radius: 12px; padding: 10px; color: black; border: 5px solid #222; }
+.card-top { font-weight: bold; display: flex; justify-content: space-between; background: #eee; padding: 5px; border-radius: 5px; }
+.card-pic { height: 160px; margin: 10px 0; border: 2px solid black; background-size: cover; }
+.card-info { background: #cfb991; padding: 10px; font-size: 0.8rem; height: 100px; border-radius: 5px; }
 
-.mtg-card {
-    width: 300px;
-    height: 420px;
-    background: #121212;
-    border: 10px solid #222;
-    border-radius: 15px;
-    padding: 12px;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-.mtg-card:hover {
-    transform: translateY(-20px);
-    border-color: var(--gold);
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
-}
-
-.card-inner {
-    background: #bbb;
-    height: 100%;
-    border-radius: 5px;
-    padding: 10px;
-    color: black;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-top {
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(255,255,255,0.7);
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.card-pic {
-    height: 160px;
-    margin: 10px 0;
-    border: 2px solid #000;
-    background-size: cover;
-}
-
-.card-info {
-    background: #cfb991;
-    padding: 10px;
-    font-size: 0.85rem;
-    flex-grow: 1;
-    border: 1px solid #8b7355;
-}
-
-.flavor {
-    font-style: italic;
-    border-top: 1px solid #8b7355;
-    margin-top: 5px;
-    padding-top: 5px;
-}
+/* Hero y Typewriter */
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.glow-text { font-family: 'Cinzel'; font-size: 4rem; text-shadow: 0 0 20px var(--gold); margin: 0; }
+.typewriter-container { color: var(--gold); font-size: 1.5rem; margin: 20px 0; font-family: 'MedievalSharp'; }
