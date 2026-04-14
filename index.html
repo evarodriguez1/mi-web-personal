@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Eva | Planeswalker Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente épica de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- El Anillo Único (Navbar) -->
+    <nav class="nav-lor">
+        <ul>
+            <li><a href="#perfil">Mi Lore</a></li>
+            <li><a href="#cartas">Grimorio de Skills</a></li>
+            <li><a href="#experiencia">La Travesía</a></li>
+            <li><a href="#contacto">Cuervo Mensajero</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glow-text">MARIA EVA RODRIGUEZ</h1>
+            <p class="subtitle">Junior Backend Developer | Planeswalker de Córdoba</p>
+            <div class="mana-symbols">
+                <span class="mana blue">U</span> <!-- Blue por Java/Logic -->
+                <span class="mana black">B</span> <!-- Black por SQL/Databases -->
+                <span class="mana green">G</span> <!-- Green por su pasado en Ed. Física/Naturaleza -->
+            </div>
+        </div>
+    </header>
+
+    <section id="perfil" class="container">
+        <h2 class="section-title">Perfil Profesional</h2>
+        <p class="parchment">
+            "No todos los que vagan están perdidos". Como antigua profesora de Educación Física ahora convertida en forjadora de software, busco crear APIs tan resistentes como el Mithril y tan eficientes como un hechizo de 'Ancestral Recall'.
+        </p>
+    </section>
+
+    <!-- Sección de Cartas MTG -->
+    <section id="cartas" class="container">
+        <h2 class="section-title">Mis Cartas de Poder</h2>
+        <div class="deck">
+            <!-- Carta 1: Java/Spring -->
+            <div class="mtg-card java">
+                <div class="card-header">Spring Framework <span class="mana-cost">2WB</span></div>
+                <div class="card-art" style="background-image: url('https://wallpaperaccess.com/full/3909258.jpg')"></div>
+                <div class="card-type">Hechizo de Invocación - Backend</div>
+                <div class="card-body">
+                    {T}: Genera una API RESTful con seguridad JWT. <br>
+                    "La estructura es la base de todo reino."
+                </div>
+                <div class="card-stats">4 / 5</div>
+            </div>
+
+            <!-- Carta 2: Bases de Datos -->
+            <div class="mtg-card sql">
+                <div class="card-header">PostgreSQL / Mongo <span class="mana-cost">3B</span></div>
+                <div class="card-art" style="background-image: url('https://img.mexicodesconocido.com.mx/wp-content/uploads/2019/04/minas-de-moria.jpg')"></div>
+                <div class="card-type">Encantamiento - Minas de Datos</div>
+                <div class="card-body">
+                    Al entrar al campo de batalla, optimiza todas las consultas SQL. <br>
+                    "Cavamos profundo en los datos."
+                </div>
+                <div class="card-stats">5 / 3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Juego Temático -->
+    <section class="game-section">
+        <h3>¿Hacia dónde va la Comunidad?</h3>
+        <p>Elegí tu facción para cambiar el tema de la web:</p>
+        <button onclick="changeTheme('moria')">Minas de Moria (Dark)</button>
+        <button onclick="changeTheme('lorien')">Lothlórien (Light)</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

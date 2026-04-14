@@ -1,0 +1,101 @@
+:root {
+    --gold: #c5a059;
+    --parchment: #f4e4bc;
+    --moria-bg: #1a1a1a;
+    --lorien-bg: #2d4c2d;
+}
+
+body {
+    background-color: var(--moria-bg);
+    color: var(--parchment);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    transition: all 0.5s ease;
+}
+
+h1, h2, .nav-lor {
+    font-family: 'Cinzel', serif;
+}
+
+.nav-lor {
+    background: rgba(0,0,0,0.8);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+}
+
+.nav-lor ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-lor a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Efecto de Carta Magic */
+.mtg-card {
+    width: 280px;
+    height: 400px;
+    background: #333;
+    border: 8px solid #222;
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    margin: 20px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.card-header {
+    background: #ddd;
+    color: #000;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-art {
+    height: 160px;
+    background-size: cover;
+    margin: 5px 0;
+    border: 2px solid #222;
+}
+
+.card-type {
+    background: #ddd;
+    color: #000;
+    font-size: 0.8em;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+
+.card-body {
+    background: #fff;
+    color: #000;
+    height: 100px;
+    padding: 10px;
+    font-size: 0.9em;
+    font-style: italic;
+    border-radius: 0 0 10px 10px;
+}
+
+.card-stats {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #ddd;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
