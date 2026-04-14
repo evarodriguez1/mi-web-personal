@@ -1,3 +1,9 @@
+/* 
+   PROYECTO: PORTFOLIO PERSONAL - MARIA EVA RODRIGUEZ
+   ESTILO: THE DARK GATHERING (LOTR + MTG MIX)
+   ESTRUCTURA: REFACTORIZADA V.2.0
+*/
+
 /* --- 1. VARIABLES GLOBALES Y RESET --- */
 :root {
     --gold: #c5a059;
@@ -31,7 +37,7 @@ body {
     background: black;
 }
 
-/* --- 3. NAVBAR (ESTILO LUCA + ALIANZA) --- */
+/* --- 3. NAVBAR (ESTILO GLASSMORPHISM) --- */
 .navbar {
     position: fixed;
     width: 100%;
@@ -89,9 +95,9 @@ body {
     box-shadow: 0 0 15px var(--gold);
 }
 
-/* --- 4. HERO SECTION (NOMBRE Y TYPEWRITER CON BRILLO) --- */
+/* --- 4. HERO SECTION (RESPLANDOR ÉPICO) --- */
 .hero {
-    height: 70vh; /* Altura reducida para conectar con el Lore */
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,7 +110,6 @@ body {
     font-family: 'Cinzel', serif;
     font-size: 4.5rem;
     color: #ffffff;
-    /* Resplandor multinivel para Maria Eva Rodriguez */
     text-shadow: 
         0 0 10px #fff, 
         0 0 20px var(--gold), 
@@ -125,7 +130,6 @@ body {
     font-family: 'MedievalSharp', cursive;
     font-size: 2rem;
     font-weight: bold;
-    /* Resplandor para que no se pierda con las runas */
     text-shadow: 
         0 0 10px #fff, 
         0 0 20px var(--gold), 
@@ -135,10 +139,8 @@ body {
 .cursor { color: var(--gold); animation: blink 0.7s infinite; }
 @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
 
-/* --- 5. SECCIONES Y CONTENEDORES (GLASSMORPHISM) --- */
-.section { 
-    padding: 20px 20px; 
-}
+/* --- 5. SECCIONES Y CONTENEDORES --- */
+.section { padding: 20px 20px; }
 
 .divider {
     text-align: center;
@@ -155,7 +157,7 @@ body {
     border-radius: 20px;
     padding: 35px 50px;
     width: 95%;
-    max-width: 1150px; /* Ancho para el tríptico */
+    max-width: 1150px;
     margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
@@ -177,13 +179,13 @@ body {
     box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
 }
 
-/* --- 7. GRIMORIO (CARTAS EN FILA) --- */
+/* --- 7. GRIMORIO (SISTEMA DE CARTAS MTG) --- */
 .deck {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap; /* Cambiado a wrap para evitar errores en tablets */
+    flex-wrap: wrap;
     gap: 25px;
     margin-top: 25px;
 }
@@ -205,11 +207,15 @@ body {
     display: flex; flex-direction: column;
 }
 
-.card-top { font-weight: bold; display: flex; justify-content: space-between; background: #eee; padding: 5px; border-radius: 5px; border: 1px solid #555; }
-.card-pic { height: 150px; margin: 8px 0; border: 2px solid #000; background-size: cover; background-position: center; border-radius: 3px; }
-.card-info { background: #cfb991; padding: 12px; font-size: 0.85rem; border-radius: 5px; flex-grow: 1; border: 1px solid #8b7355; }
+.card-top { 
+    font-weight: bold; display: flex; justify-content: space-between; 
+    background: #eee; padding: 5px; border-radius: 5px; border: 1px solid #555; 
+}
 
-/* --- DETALLES DE LAS CARTAS MAGIC --- */
+.card-pic { 
+    height: 150px; margin: 8px 0; border: 2px solid #000; 
+    background-size: cover; background-position: center; border-radius: 3px; 
+}
 
 .card-type {
     font-size: 0.75rem;
@@ -218,13 +224,14 @@ body {
     margin: 4px 0;
     border: 1px solid #555;
     font-weight: bold;
-    font-family: sans-serif; /* Las cartas de Magic usan sans-serif para el tipo */
+    font-family: sans-serif;
 }
 
+/* UNIFICADO: Información de la carta */
 .card-info {
     background: #cfb991;
-    padding: 8px;
-    font-size: 0.8rem;
+    padding: 10px;
+    font-size: 0.85rem;
     border-radius: 0 0 5px 5px;
     border: 1px solid #8b7355;
     flex-grow: 1;
@@ -233,24 +240,11 @@ body {
     justify-content: center;
 }
 
-.ability {
-    margin-bottom: 5px;
-    line-height: 1.2;
-}
+.ability { margin-bottom: 5px; line-height: 1.2; }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #8b7355;
-    margin: 5px 0;
-}
+hr { border: 0; height: 1px; background: #8b7355; margin: 5px 0; }
 
-.flavor {
-    font-style: italic;
-    font-family: serif;
-    font-size: 0.75rem;
-    opacity: 0.9;
-}
+.flavor { font-style: italic; font-family: serif; font-size: 0.75rem; opacity: 0.9; }
 
 .card-stats {
     align-self: flex-end;
@@ -260,7 +254,7 @@ hr {
     padding: 2px 10px;
     border: 2px solid #222;
     border-radius: 8px;
-    margin-top: -15px; /* Sube la cajita de stats para que pise un poco el cuadro de texto */
+    margin-top: -15px;
     margin-right: 5px;
     z-index: 5;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -291,4 +285,5 @@ hr {
     #typewriter { font-size: 1.5rem; }
     .hero { height: 60vh; }
     .social-links { gap: 25px; }
+    .container-box { padding: 25px 30px; }
 }
