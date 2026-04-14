@@ -3,78 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Eva | Backend Planeswalker</title>
+    <title>Maria Eva | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fuentes Pro -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@300;500;700&family=MedievalSharp&display=swap" rel="stylesheet">
-    <!-- Iconos estilo Luca (FontAwesome) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- El fondo de runas que no fallará ahora -->
     <canvas id="canvas-runas"></canvas>
 
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">M.E.R</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#lore">Sobre Mí</a></li>
-                <li><a href="#grimorio">Habilidades</a></li>
-                <li><a href="#misiones">Experiencia</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
+        <div class="logo">M.E.R</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#lore">Sobre Mí</a></li>
+            <li><a href="#grimorio">Skills</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </nav>
 
-    <header id="inicio" class="hero">
+    <section id="inicio" class="hero">
         <div class="hero-content">
             <h1 class="glow-text">MARIA EVA RODRIGUEZ</h1>
-            <!-- EFECTO TYPEWRITER COMO EL DE LUCA -->
-            <h2 class="typewriter">Soy <span id="typewriter-text"></span><span class="cursor">|</span></h2>
-            <div class="mana-container">
-                <div class="mana u"></div><div class="mana b"></div><div class="mana g"></div>
+            <div class="typewriter-container">
+                <span id="typewriter"></span><span class="cursor">|</span>
             </div>
-            <a href="#lore" class="btn-primary">Explorar mi Reino</a>
+            <a href="#lore" class="btn-scroll">Ver mi Travesía <i class="fas fa-chevron-down"></i></a>
         </div>
-    </header>
+    </section>
 
     <section id="lore" class="section">
-        <div class="container parchment">
-            <h2 class="section-title">Mi Lore</h2>
-            <div class="lore-grid">
-                <div class="lore-text">
-                    <p>De forjar atletas en la <strong>Educación Física</strong> a forjar sistemas en el <strong>Backend</strong>. Mi travesía es la de una Planeswalker que entiende que la disciplina y la lógica son el Mithril del software.</p>
-                    <p>Actualmente cursando el 3er año en el <strong>ISAUI</strong> y desarrollando APIs potentes como hechizos de nivel 9.</p>
-                </div>
-                <!-- Aquí iría tu foto -->
-                <div class="lore-img" style="background-image: url('tu-foto.jpg');"></div>
-            </div>
+        <div class="parchment">
+            <h2 class="title">Perfil Profesional</h2>
+            <p>Desarrolladora backend junior orientada a la innovación. Del mundo de la Educación Física al código: combinando disciplina, estrategia y persistencia para forjar soluciones escalables.</p>
         </div>
     </section>
 
     <section id="grimorio" class="section">
-        <h2 class="section-title">Grimorio de Skills</h2>
+        <h2 class="title" style="color: var(--gold); text-align: center;">Grimorio de Hechizos</h2>
         <div class="deck">
-            <!-- Carta Java (Estilo Luca pero MTG) -->
+            <!-- Carta Java -->
             <div class="mtg-card">
                 <div class="card-inner">
-                    <div class="card-header">Spring Boot <i class="fab fa-java"></i></div>
-                    <div class="card-art" style="background-image: url('https://wallpaperaccess.com/full/3909258.jpg')"></div>
-                    <div class="card-body">
-                        <p><strong>Habilidad:</strong> Construye APIs robustas y seguras.</p>
-                        <p class="flavor-text">"La estructura es la base de todo reino."</p>
+                    <div class="card-top">Java & Spring <span>3U</span></div>
+                    <div class="card-pic" style="background-image: url('https://wallpaperaccess.com/full/3909258.jpg')"></div>
+                    <div class="card-info">
+                        <strong>Criatura — Dev Backend</strong>
+                        <p>Invoca APIs RESTful con seguridad Mithril.</p>
+                        <p class="flavor">"La base de todo gran reino."</p>
                     </div>
                 </div>
             </div>
+
             <!-- Carta SQL -->
             <div class="mtg-card">
                 <div class="card-inner">
-                    <div class="card-header">Bases de Datos <i class="fas fa-database"></i></div>
-                    <div class="card-art" style="background-image: url('https://images.tcdn.com.br/img/img_prod/697730/estoque/1594924765_minimo-moria-1.jpg')"></div>
-                    <div class="card-body">
-                        <p><strong>Habilidad:</strong> Gestión de datos en Moria (Postgres/Mongo).</p>
-                        <p class="flavor-text">"Cavamos profundo, pero con queries eficientes."</p>
+                    <div class="card-top">SQL / NoSQL <span>2B</span></div>
+                    <div class="card-pic" style="background-image: url('https://images.tcdn.com.br/img/img_prod/697730/estoque/1594924765_minimo-moria-1.jpg')"></div>
+                    <div class="card-info">
+                        <strong>Encantamiento — Datos</strong>
+                        <p>Optimiza queries en las Minas de Moria.</p>
+                        <p class="flavor">"Cavamos profundo y con orden."</p>
                     </div>
                 </div>
             </div>
@@ -82,10 +72,9 @@
     </section>
 
     <footer id="contacto" class="footer">
-        <p>Enviame un cuervo o un mensaje:</p>
-        <div class="social-links">
-            <a href="https://github.com/evarodriguez1" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/maria-eva-rodriguez-040728103/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="socials">
+            <a href="https://github.com/evarodriguez1"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/maria-eva-rodriguez-040728103/"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:maevarodriguez1@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
