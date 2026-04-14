@@ -102,10 +102,15 @@ body {
 /* --- MARIA EVA RODRIGUEZ --- */
 .glow-text {
     font-family: 'Cinzel', serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     color: white;
-    text-shadow: 0 0 20px #000, 0 0 10px var(--gold); /* Sombra negra de fondo para cortar las runas */
+    text-shadow: 
+        0 0 10px #fff, 
+        0 0 20px var(--gold), 
+        0 0 40px var(--gold), 
+        0 0 60px var(--gold); /* Cuatro capas de brillo para un efecto potente */
     margin: 0;
+    letter-spacing: 5px;
 }
 
 /* --- MEJORA DE VISIBILIDAD PARA EL TYPEWRITER --- */
