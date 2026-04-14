@@ -1,62 +1,202 @@
-/* --- EL ESTILO DE MARCOS (Inspirado en Luca pero LOTR) --- */
-
-.container-box {
-    background: rgba(20, 20, 20, 0.7); /* Gris muy oscuro semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo (PRO) */
-    border: 1px solid rgba(197, 160, 89, 0.3); /* Borde dorado sutil */
-    border-radius: 15px; /* Bordes redondeados como Luca */
-    padding: 40px;
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
-    transition: transform 0.3s ease;
+/* --- VARIABLES Y RESET --- */
+:root {
+    --gold: #c5a059;
+    --gold-bright: #ffdf00;
+    --dark-bg: #050505;
+    --parchment: #f4e4bc;
+    --glass-bg: rgba(20, 20, 20, 0.7); /* Fondo para efecto Luca */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.container-box:hover {
-    border-color: var(--gold); /* El borde brilla cuando pasas el mouse */
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
-/* Ajustes para el contenido dentro de los marcos */
-.lore-flex {
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* --- FONDO DINÁMICO --- */
+#canvas-runas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: black;
+}
+
+/* --- NAVBAR ESTILO PREMIUM --- */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.95);
+    padding: 15px 80px; /* Ancho profesional */
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    border-bottom: 1px solid var(--gold);
+    backdrop-filter: blur(8px);
 }
 
-.lore-text {
-    flex: 1;
-    min-width: 300px;
-    font-size: 1.1rem;
-    line-height: 1.6;
+.logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Foto redonda profesional */
-    border: 3px solid var(--gold);
-    object-fit: cover;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 45px; /* Espaciado entre items */
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 8px var(--gold);
+}
+
+/* BOTÓN DE ALIANZA (CTA) */
+.btn-alianza-nav {
+    border: 2px solid var(--gold) !important;
+    padding: 8px 22px !important;
+    border-radius: 50px;
+    background: rgba(197, 160, 89, 0.1);
+}
+
+.btn-alianza-nav:hover {
+    background: var(--gold) !important;
+    color: var(--dark-bg) !important;
     box-shadow: 0 0 15px var(--gold);
 }
 
-/* Títulos dentro de los recuadros */
-.medieval-title {
-    margin-top: 0;
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh; /* Ajustado para que el Lore asome rápido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.glow-text {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 25px var(--gold);
+}
+
+.typewriter-container {
     color: var(--gold);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.8rem;
+    margin: 20px 0;
+    height: 40px; /* Previene saltos de línea */
 }
 
-/* Timeline ajustado al nuevo marco */
-.timeline {
-    border-left: 2px solid var(--gold);
-    padding-left: 30px;
-    margin-left: 20px;
+.cursor { animation: blink 0.7s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* MANA SYMBOLS */
+.mana-row { display: flex; gap: 15px; margin-top: 15px; }
+.mana {
+    width: 25px; height: 25px; border-radius: 50%; border: 1px solid #fff;
+}
+.mana.u { background: #0e68ab; box-shadow: 0 0 10px #0e68ab; }
+.mana.b { background: #333; box-shadow: 0 0 10px #fff; }
+.mana.g { background: #106331; box-shadow: 0 0 10px #106331; }
+
+/* --- CONTENEDORES DE SECCIÓN (Glassmorphism estilo Luca) --- */
+.section { padding: 40px 20px; }
+
+.container-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 
-/* Cartas dentro del marco */
-.deck {
-    gap: 20px;
-    margin-top: 30px;
+.divider { text-align: center; margin: 50px 0; color: var(--gold); font-size: 1.5rem; }
+
+.medieval-title {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 2.8rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+}
+.medieval-title.center { text-align: center; }
+
+/* --- LORE / ABOUT ME --- */
+.lore-flex { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+.lore-text { flex: 1; min-width: 300px; font-size: 1.15rem; line-height: 1.8; color: #ddd; }
+.profile-img { 
+    width: 190px; height: 190px; border-radius: 50%; 
+    border: 4px solid var(--gold); object-fit: cover;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+/* --- GRIMORIO / MTG CARDS --- */
+.deck { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; }
+.mtg-card { width: 280px; height: 400px; transition: var(--transition); }
+.mtg-card:hover { transform: translateY(-15px) rotate(2deg); }
+
+.card-inner { 
+    background: #bbb; height: 100%; border-radius: 12px; 
+    padding: 10px; color: black; border: 5px solid #222;
+    display: flex; flex-direction: column;
+}
+
+.card-top { font-weight: bold; display: flex; justify-content: space-between; background: #eee; padding: 5px; border-radius: 5px; border: 1px solid #555; }
+.card-pic { height: 160px; margin: 10px 0; border: 2px solid #000; background-size: cover; background-position: center; border-radius: 3px; }
+.card-info { background: #cfb991; padding: 12px; font-size: 0.9rem; border-radius: 5px; flex-grow: 1; border: 1px solid #8b7355; }
+
+/* --- TRAVESÍA / TIMELINE --- */
+.timeline { border-left: 2px solid var(--gold); padding-left: 40px; margin-left: 20px; }
+.timeline-item { position: relative; margin-bottom: 40px; }
+.timeline-item::before {
+    content: ""; position: absolute; left: -51px; top: 5px;
+    width: 20px; height: 20px; background: var(--dark-bg);
+    border: 3px solid var(--gold); border-radius: 50%;
+}
+.timeline-date { color: var(--gold); font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; }
+.timeline-content h3 { font-family: 'Cinzel'; color: white; margin-bottom: 10px; }
+
+/* --- FOOTER / CONTACTO --- */
+.footer { padding: 80px 20px 40px; text-align: center; background: #000; }
+.social-links { display: flex; justify-content: center; gap: 50px; margin: 40px 0; }
+.social-links a { color: var(--gold); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
+.social-links i { font-size: 2.8rem; }
+.social-links a:hover { color: white; transform: translateY(-8px); text-shadow: 0 0 15px var(--gold); }
+.footer-bottom { border-top: 1px solid #222; padding-top: 30px; color: #555; font-size: 0.85rem; letter-spacing: 1px; }
+
+/* RESPONSIVE: Adaptación a móviles */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .nav-links { gap: 15px; font-size: 0.8rem; }
+    .glow-text { font-size: 2.5rem; }
+    .container-box { padding: 25px; }
 }
