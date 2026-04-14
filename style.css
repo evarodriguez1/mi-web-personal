@@ -1,101 +1,157 @@
+/* Importamos fuentes épicas */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&family=Quicksand:wght@300;500&display=swap');
+
 :root {
-    --gold: #c5a059;
+    --gold: #d4af37;
+    --gold-bright: #ffdf00;
+    --moria-black: #0f0f0f;
     --parchment: #f4e4bc;
-    --moria-bg: #1a1a1a;
-    --lorien-bg: #2d4c2d;
+    --card-bg: #222;
 }
 
 body {
-    background-color: var(--moria-bg);
+    background-color: var(--moria-black);
+    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); /* Textura de cuero */
     color: var(--parchment);
     font-family: 'Quicksand', sans-serif;
     margin: 0;
-    transition: all 0.5s ease;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-h1, h2, .nav-lor {
-    font-family: 'Cinzel', serif;
-}
-
+/* Navbar estilo Élfico */
 .nav-lor {
-    background: rgba(0,0,0,0.8);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--gold);
+    padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 2px solid var(--gold);
+    z-index: 1000;
 }
 
 .nav-lor ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 30px;
+    gap: 40px;
+    margin: 0;
 }
 
 .nav-lor a {
     color: var(--gold);
     text-decoration: none;
+    font-family: 'Cinzel', serif;
     font-weight: bold;
-    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
 
-/* Efecto de Carta Magic */
+.nav-lor a:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--gold);
+}
+
+/* Sección Hero (Bienvenida) */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://wallpaperaccess.com/full/1865147.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid var(--gold);
+}
+
+.glow-text {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    margin-bottom: 10px;
+}
+
+/* Las Cartas de Magic (Mejoradas) */
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+
 .mtg-card {
-    width: 280px;
-    height: 400px;
-    background: #333;
-    border: 8px solid #222;
-    border-radius: 15px;
-    padding: 10px;
-    display: inline-block;
-    margin: 20px;
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
-    position: relative;
+    width: 300px;
+    height: 420px;
+    background: var(--card-bg);
+    border: 12px solid #171717;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.mtg-card:hover {
+    transform: translateY(-20px) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
 }
 
 .card-header {
-    background: #ddd;
-    color: #000;
-    padding: 5px;
-    font-weight: bold;
+    background: #e3e3e3;
+    color: #111;
+    font-family: 'MedievalSharp', cursive;
+    padding: 5px 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .card-art {
-    height: 160px;
+    height: 180px;
+    margin: 8px 0;
+    border: 3px solid #171717;
+    border-radius: 5px;
     background-size: cover;
-    margin: 5px 0;
-    border: 2px solid #222;
+    background-position: center;
 }
 
 .card-type {
-    background: #ddd;
-    color: #000;
-    font-size: 0.8em;
-    padding: 2px 5px;
-    margin-bottom: 5px;
+    background: #d1d1d1;
+    color: #111;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .card-body {
-    background: #fff;
-    color: #000;
-    height: 100px;
+    background: #cfb991; /* Color tipo carta antigua */
+    color: #222;
     padding: 10px;
-    font-size: 0.9em;
-    font-style: italic;
-    border-radius: 0 0 10px 10px;
+    height: 100px;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    border-radius: 3px;
+    border: 1px solid #888;
 }
 
-.card-stats {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: #ddd;
-    color: #000;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-weight: bold;
+/* Sección de texto tipo pergamino */
+.parchment {
+    background: #f4e4bc;
+    color: #2c1e0a;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #d2b48c;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    position: relative;
 }
