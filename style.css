@@ -199,10 +199,10 @@ html, body {
     /* 1. Fix para el Hero: Pantalla completa y nombre centrado/abajo */
     .hero {
         height: 100vh !important; /* Ocupa el 100% del alto del celu */
-        padding-top: 200px !important; /* Empujamos el nombre bien abajo */
+        padding-top: 100px !important; /* Empujamos el nombre bien abajo */
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* Permitimos que el padding mande la posición */
+        justify-content: center !important; /* Center para que el navegador lo equilibre solo */
     }
 
     .glow-text {
