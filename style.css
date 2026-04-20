@@ -1,23 +1,9 @@
-/* 
-   PROYECTO: PORTFOLIO PERSONAL - MARIA EVA RODRIGUEZ
-   ESTILO: THE DARK GATHERING (LOTR + MTG MIX)
-   ESTRUCTURA: REFACTORIZADA V.2.0
-*/
-
-/* --- 1. VARIABLES GLOBALES Y RESET --- */
+/* --- VARIABLES Y RESET --- */
 :root {
     --gold: #c5a059;
-    --gold-bright: #ffdf00;
     --dark-bg: #050505;
-    --parchment: #f4e4bc;
     --glass-bg: rgba(20, 20, 20, 0.7);
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
 }
 
 body {
@@ -25,265 +11,150 @@ body {
     color: white;
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    padding-top: 70px; /* Espacio para la navbar fija */
 }
 
-/* --- 2. FONDO DINÁMICO (RUNAS) --- */
+/* --- BACKGROUND --- */
 #canvas-runas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    position: fixed; top: 0; left: 0; z-index: -1;
     background: black;
 }
 
-/* --- 3. NAVBAR (ESTILO GLASSMORPHISM) --- */
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(0,0,0,0.9);
-    padding: 15px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* --- NAVBAR (Bootstrap Custom) --- */
+.custom-nav {
+    background: rgba(0,0,0,0.95);
     border-bottom: 1px solid var(--gold);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
     font-family: 'Cinzel', serif;
-    color: var(--gold);
-    font-size: 1.5rem;
+    color: var(--gold) !important;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 45px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
+.nav-link {
+    color: white !important;
     font-family: 'Cinzel', serif;
-    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: 1px;
     transition: 0.3s;
+    margin: 0 10px;
 }
 
-.nav-links a:hover {
-    color: var(--gold);
+.nav-link:hover {
+    color: var(--gold) !important;
     text-shadow: 0 0 8px var(--gold);
 }
 
 .btn-alianza-nav {
     border: 2px solid var(--gold) !important;
-    padding: 8px 22px !important;
     border-radius: 50px;
-    background: rgba(197, 160, 89, 0.1);
+    padding: 5px 20px !important;
 }
 
-.btn-alianza-nav:hover {
-    background: var(--gold) !important;
-    color: var(--dark-bg) !important;
-    box-shadow: 0 0 15px var(--gold);
-}
-
-/* --- 4. HERO SECTION (RESPLANDOR ÉPICO) --- */
-.hero {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 80px;
-}
+/* --- HERO --- */
+.hero { height: 70vh; }
 
 .glow-text {
     font-family: 'Cinzel', serif;
-    font-size: 4.5rem;
-    color: #ffffff;
-    text-shadow: 
-        0 0 10px #fff, 
-        0 0 20px var(--gold), 
-        0 0 40px var(--gold), 
-        0 0 60px var(--gold);
-    margin: 0;
-    letter-spacing: 5px;
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Tamaño fluido según pantalla */
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--gold), 0 0 40px var(--gold);
 }
 
 .typewriter-container {
-    margin: 10px 0;
-    height: 50px;
-    z-index: 10;
+    color: var(--gold);
+    font-family: 'MedievalSharp', cursive;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    height: 40px;
 }
 
 #typewriter {
-    color: #ffffff !important;
-    font-family: 'MedievalSharp', cursive;
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 
-        0 0 10px #fff, 
-        0 0 20px var(--gold), 
-        0 0 30px var(--gold) !important;
+    color: #fff !important;
+    text-shadow: 0 0 10px var(--gold);
 }
 
-.cursor { color: var(--gold); animation: blink 0.7s infinite; }
-@keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
-
-/* --- 5. SECCIONES Y CONTENEDORES --- */
-.section { padding: 20px 20px; }
-
-.divider {
-    text-align: center;
-    margin: 15px 0;
-    color: var(--gold);
-    font-size: 1.2rem;
-}
-
+/* --- SECCIONES (Glassmorphism) --- */
 .container-box {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(197, 160, 89, 0.25);
     border-radius: 20px;
-    padding: 35px 50px;
-    width: 95%;
-    max-width: 1150px;
-    margin: 0 auto;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
 .medieval-title {
     font-family: 'MedievalSharp', cursive;
-    font-size: 2.5rem;
     color: var(--gold);
-    margin-bottom: 25px;
-}
-.medieval-title.center { text-align: center; }
-
-/* --- 6. LORE / SOBRE MÍ --- */
-.lore-flex { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-.lore-text { flex: 1; min-width: 300px; font-size: 1.15rem; line-height: 1.7; color: #ddd; }
-.profile-img { 
-    width: 180px; height: 180px; border-radius: 50%; 
-    border: 3px solid var(--gold); object-fit: cover;
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+    font-size: 2.5rem;
 }
 
-/* --- 7. GRIMORIO (SISTEMA DE CARTAS MTG) --- */
-.deck {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 25px;
+.divider { color: var(--gold); font-size: 1.2rem; }
+
+.profile-img {
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 20px var(--gold);
+    max-width: 180px;
 }
 
+/* --- CARTAS MTG --- */
 .mtg-card {
-    width: 280px;
-    height: 390px;
-    flex-shrink: 0;
+    width: 280px; height: 390px;
     transition: var(--transition);
 }
 
-.mtg-card:hover {
-    transform: translateY(-15px) scale(1.03);
-}
+.mtg-card:hover { transform: translateY(-15px); }
 
-.card-inner { 
-    background: #bbb; height: 100%; border-radius: 12px; 
+.card-inner {
+    background: #bbb; height: 100%; border-radius: 12px;
     padding: 10px; color: black; border: 4px solid #222;
     display: flex; flex-direction: column;
 }
 
 .card-top { 
     font-weight: bold; display: flex; justify-content: space-between; 
-    background: #eee; padding: 5px; border-radius: 5px; border: 1px solid #555; 
+    background: #eee; padding: 3px 8px; border-radius: 5px; border: 1px solid #555;
 }
 
 .card-pic { 
-    height: 150px; margin: 8px 0; border: 2px solid #000; 
+    height: 140px; margin: 8px 0; border: 2px solid #000; 
     background-size: cover; background-position: center; border-radius: 3px; 
 }
 
 .card-type {
-    font-size: 0.75rem;
-    background: linear-gradient(to right, #ddd, #fff);
-    padding: 2px 8px;
-    margin: 4px 0;
-    border: 1px solid #555;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-size: 0.7rem; background: linear-gradient(to right, #ddd, #fff);
+    padding: 2px 8px; margin: 4px 0; border: 1px solid #555; font-weight: bold;
 }
 
-/* UNIFICADO: Información de la carta */
 .card-info {
-    background: #cfb991;
-    padding: 10px;
-    font-size: 0.85rem;
-    border-radius: 0 0 5px 5px;
-    border: 1px solid #8b7355;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background: #cfb991; padding: 8px; font-size: 0.8rem;
+    border: 1px solid #8b7355; flex-grow: 1;
+    display: flex; flex-direction: column; justify-content: center;
 }
 
-.ability { margin-bottom: 5px; line-height: 1.2; }
-
-hr { border: 0; height: 1px; background: #8b7355; margin: 5px 0; }
-
-.flavor { font-style: italic; font-family: serif; font-size: 0.75rem; opacity: 0.9; }
+.flavor { font-style: italic; font-family: serif; font-size: 0.75rem; }
 
 .card-stats {
-    align-self: flex-end;
-    background: #eee;
-    color: #000;
-    font-weight: bold;
-    padding: 2px 10px;
-    border: 2px solid #222;
-    border-radius: 8px;
-    margin-top: -15px;
-    margin-right: 5px;
-    z-index: 5;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    align-self: flex-end; background: #eee; color: #000;
+    padding: 1px 8px; border: 2px solid #222; border-radius: 8px;
+    margin-top: -12px; z-index: 2;
 }
 
-/* --- 8. TRAVESÍA (TIMELINE) --- */
-.timeline { border-left: 2px solid var(--gold); padding-left: 30px; margin-left: 20px; }
-.timeline-item { position: relative; margin-bottom: 30px; }
+/* --- TIMELINE --- */
+.timeline { border-left: 2px solid var(--gold); }
+.timeline-item { position: relative; margin-bottom: 30px; padding-left: 20px; }
 .timeline-item::before {
-    content: ""; position: absolute; left: -41px; top: 5px;
+    content: ""; position: absolute; left: -11px; top: 5px;
     width: 20px; height: 20px; background: var(--dark-bg);
-    border: 3px solid var(--gold); border-radius: 50%;
+    border: 2px solid var(--gold); border-radius: 50%;
 }
-.timeline-date { color: var(--gold); font-weight: bold; font-size: 1.1rem; }
+.timeline-date { color: var(--gold); font-weight: bold; }
 
-/* --- 9. FOOTER --- */
-.footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid var(--gold); }
-.social-links { display: flex; justify-content: center; gap: 45px; margin: 30px 0; }
-.social-links a { color: var(--gold); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: 0.3s; }
-.social-links i { font-size: 2.8rem; }
-.social-links a:hover { color: white; transform: translateY(-8px); text-shadow: 0 0 15px var(--gold); }
-
-/* --- 10. RESPONSIVE --- */
-@media (max-width: 950px) {
-    .navbar { padding: 15px 25px; }
-    .nav-links { gap: 15px; }
-    .glow-text { font-size: 2.8rem; letter-spacing: 2px; }
-    #typewriter { font-size: 1.5rem; }
-    .hero { height: 60vh; }
-    .social-links { gap: 25px; }
-    .container-box { padding: 25px 30px; }
+/* --- FOOTER --- */
+.social-link {
+    color: var(--gold); text-decoration: none; transition: 0.3s;
 }
+.social-link:hover { color: white; transform: scale(1.1); }

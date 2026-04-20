@@ -4,122 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Eva Rodriguez | Portfolio Planeswalker</title>
+
+    <!-- BOOTSTRAP 5.3: El framework para que sea responsive (celulares) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- CSS Propio -->
+    <!-- CSS PROPIO: Personalización estética (LOTR + MTG) -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- FUENTES: Cinzel para títulos épicos, Quicksand para lectura, MedievalSharp para fantasía -->
+    <!-- FUENTES Y ICONOS -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@300;500;700&family=MedievalSharp&display=swap" rel="stylesheet">
-    
-    <!-- ICONOS: FontAwesome para redes sociales y símbolos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- LIENZO PARA LAS RUNAS: Se dibuja vía JavaScript en el fondo -->
+    <!-- CANVAS: Lluvia de runas (se mantiene de fondo) -->
     <canvas id="canvas-runas"></canvas>
 
-    <!-- NAVEGACIÓN: Menú fijo con efecto de cristal -->
-    <nav class="navbar">
-        <div class="logo">M.E.R</div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#lore">Mi Lore</a></li>
-            <li><a href="#grimorio">Grimorio</a></li>
-            <li><a href="#travesia">La Travesía</a></li>
-            <!-- CTA: Call to Action (Botón de Alianza) -->
-            <li><a href="#contacto" class="btn-alianza-nav">Alianza</a></li>
-        </ul>
+    <!-- NAVBAR: Usamos Bootstrap para un menú colapsable real en celulares -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">M.E.R</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span> <!-- El ícono de hamburguesa -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lore">Mi Lore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#grimorio">Grimorio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#travesia">La Travesía</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-alianza-nav ms-lg-3" href="#contacto">Alianza</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- CABECERA (HERO): Impacto visual inicial -->
-    <header id="inicio" class="hero">
-        <div class="hero-content">
+    <!-- HERO SECTION -->
+    <header id="inicio" class="hero d-flex align-items-center justify-content-center">
+        <div class="container text-center hero-content">
             <h1 class="glow-text">MARIA EVA RODRIGUEZ</h1>
-            <!-- Contenedor para el efecto de escritura (Typewriter) -->
             <div class="typewriter-container">
                 <span id="typewriter"></span><span class="cursor">|</span>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- SECCIÓN LORE: Sobre mí en formato pergamino digital -->
-        <section id="lore" class="section">
-            <div class="divider"><i class="fas fa-leaf"></i></div>
+    <main class="container">
+        <!-- SECCIÓN LORE: col-md-8 para texto y col-md-4 para foto -->
+        <section id="lore" class="py-5">
+            <div class="divider text-center mb-4"><i class="fas fa-leaf"></i></div>
             <div class="container-box">
-                <h2 class="medieval-title">Mi Lore</h2>
-                <div class="lore-flex">
-                    <div class="lore-text">
+                <div class="row align-items-center">
+                    <div class="col-md-8 lore-text">
+                        <h2 class="medieval-title">Mi Lore</h2>
                         <p>Soy una <strong>Desarrolladora Backend</strong> en constante evolución. Mi trayectoria comenzó en el ámbito de la Educación Física, lo que forjó mi disciplina, capacidad de liderazgo y resiliencia.</p>
-                        <p>Hoy, aplico esa misma energía al desarrollo de software en el <strong>ISAUI</strong>, creando soluciones robustas, seguras y escalables.</p>
+                        <p>Hoy, aplico esa misma energía al desarrollo de software en el <strong>ISAUI</strong>, creando soluciones robustas.</p>
                     </div>
-                    <div class="lore-photo">
-                        <!-- Foto de perfil con marco dorado -->
-                        <img src="foto-perfil.jpg" alt="Maria Eva" class="profile-img">
+                    <div class="col-md-4 text-center mt-4 mt-md-0">
+                        <img src="foto-perfil.jpg" alt="Maria Eva" class="profile-img img-fluid">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN GRIMORIO: Versión Completa con Leyendas y Stats -->
-        <section id="grimorio" class="section">
-            <div class="divider"><i class="fas fa-leaf"></i></div>
+        <!-- SECCIÓN GRIMORIO: Usamos row y col para que las cartas se apilen en celu -->
+        <section id="grimorio" class="py-5">
+            <div class="divider text-center mb-4"><i class="fas fa-leaf"></i></div>
             <div class="container-box">
-                <h2 class="medieval-title center">Grimorio de Skills</h2>
-                <div class="deck">
+                <h2 class="medieval-title text-center mb-5">Grimorio de Skills</h2>
+                <div class="row g-4 justify-content-center">
                     
-                    <!-- Carta 1: Java -->
-                    <div class="mtg-card">
-                        <div class="card-inner">
-                            <div class="card-top">Spring Boot <i class="fab fa-java"></i></div>
-                            <div class="card-pic" style="background-image: url('card-backend.jpg')"></div>
-                            
-                            <!-- Tipo de carta -->
-                            <div class="card-type">Criatura — Backend Dev</div>
-                            
-                            <div class="card-info">
-                                <p class="ability"><strong>{T}:</strong> Invocación de arquitecturas RESTful y seguridad JWT.</p>
-                                <hr>
-                                <!-- LA LEYENDA -->
-                                <p class="flavor">"La estructura es el Mithril de la web."</p>
+                    <!-- Carta 1: col-lg-4 (3 en PC), col-md-6 (2 en tablet), col-12 (1 en celu) -->
+                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="mtg-card">
+                            <div class="card-inner">
+                                <div class="card-top">Spring Boot <i class="fab fa-java"></i></div>
+                                <div class="card-pic" style="background-image: url('card-backend.jpg')"></div>
+                                <div class="card-type">Criatura — Backend Dev</div>
+                                <div class="card-info">
+                                    <p class="ability"><strong>{T}:</strong> APIs RESTful y seguridad JWT.</p>
+                                    <hr>
+                                    <p class="flavor">"La estructura es el Mithril de la web."</p>
+                                </div>
+                                <div class="card-stats">4 / 5</div>
                             </div>
-                            <!-- Estadísticas -->
-                            <div class="card-stats">4 / 5</div>
                         </div>
                     </div>
 
-                    <!-- Carta 2: Bases de Datos -->
-                    <div class="mtg-card">
-                        <div class="card-inner">
-                            <div class="card-top">Persistencia <span>B</span></div>
-                            <div class="card-pic" style="background-image: url('card-database.jpg')"></div>
-                            
-                            <div class="card-type">Encantamiento — Datos</div>
-                            
-                            <div class="card-info">
-                                <p class="ability">Gestión avanzada en PostgreSQL, SQL Server y MongoDB.</p>
-                                <hr>
-                                <p class="flavor">"Cavamos profundo en los datos, pero con orden."</p>
+                    <!-- Carta 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="mtg-card">
+                            <div class="card-inner">
+                                <div class="card-top">Persistencia <span>B</span></div>
+                                <div class="card-pic" style="background-image: url('card-database.jpg')"></div>
+                                <div class="card-type">Encantamiento — Datos</div>
+                                <div class="card-info">
+                                    <p class="ability">Gestión avanzada en SQL y MongoDB.</p>
+                                    <hr>
+                                    <p class="flavor">"Cavamos profundo, con orden."</p>
+                                </div>
+                                <div class="card-stats">3 / 4</div>
                             </div>
-                            <div class="card-stats">3 / 4</div>
                         </div>
                     </div>
 
-                    <!-- Carta 3: Frontend -->
-                    <div class="mtg-card">
-                        <div class="card-inner">
-                            <div class="card-top">Maestría Web <span>U</span></div>
-                            <div class="card-pic" style="background-image: url('card-frontend.jpg')"></div>
-                            
-                            <div class="card-type">Artefacto — Frontend</div>
-                            
-                            <div class="card-info">
-                                <p class="ability"><strong>{1U}:</strong> Desarrollo con HTML, CSS moderno y React.</p>
-                                <hr>
-                                <p class="flavor">"El reflejo de un código limpio en el espejo."</p>
+                    <!-- Carta 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                        <div class="mtg-card">
+                            <div class="card-inner">
+                                <div class="card-top">Maestría Web <span>U</span></div>
+                                <div class="card-pic" style="background-image: url('card-frontend.jpg')"></div>
+                                <div class="card-type">Artefacto — Frontend</div>
+                                <div class="card-info">
+                                    <p class="ability"><strong>{1U}:</strong> HTML, CSS y React.</p>
+                                    <hr>
+                                    <p class="flavor">"Reflejo de un código limpio."</p>
+                                </div>
+                                <div class="card-stats">2 / 3</div>
                             </div>
-                            <div class="card-stats">2 / 3</div>
                         </div>
                     </div>
 
@@ -127,34 +131,24 @@
             </div>
         </section>
 
-        <!-- SECCIÓN TRAVESÍA: Línea de tiempo de experiencia laboral -->
-        <section id="travesia" class="section">
-            <div class="divider"><i class="fas fa-leaf"></i></div>
+        <!-- SECCIÓN TRAVESÍA -->
+        <section id="travesia" class="py-5">
+            <div class="divider text-center mb-4"><i class="fas fa-leaf"></i></div>
             <div class="container-box">
-                <h2 class="medieval-title center">La Travesía</h2>
-                <div class="timeline">
-                    <!-- Item de Experiencia 1 -->
+                <h2 class="medieval-title text-center mb-4">La Travesía</h2>
+                <div class="timeline px-3">
                     <div class="timeline-item">
                         <div class="timeline-date">2023 - 2024</div>
                         <div class="timeline-content">
                             <h3>Backend Developer - Startup Tío Haze</h3>
-                            <p>Desarrollo de APIs con Spring Boot, optimización de consultas SQL y despliegue en la nube (AWS/Azure).</p>
+                            <p>Desarrollo de APIs con Spring Boot y despliegue en AWS/Azure.</p>
                         </div>
                     </div>
-                    <!-- Item de Experiencia 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">2022 - 2024</div>
-                        <div class="timeline-content">
-                            <h3>WordPress Developer - Freelance</h3>
-                            <p>Implementación de E-commerce, SEO y medidas de seguridad web para pymes.</p>
-                        </div>
-                    </div>
-                    <!-- Item de Experiencia 3 (La base) -->
                     <div class="timeline-item">
                         <div class="timeline-date">2006 - 2011</div>
                         <div class="timeline-content">
-                            <h3>Profesorado de Educación Física</h3>
-                            <p>Formación en disciplina, pedagogía y gestión de equipos de alto rendimiento.</p>
+                            <h3>Prof. de Educación Física</h3>
+                            <p>Disciplina y liderazgo de equipos de alto rendimiento.</p>
                         </div>
                     </div>
                 </div>
@@ -162,29 +156,28 @@
         </section>
     </main>
 
-    <!-- FOOTER: El Cuervo Mensajero (Contacto) -->
-    <footer id="contacto" class="footer">
-        <div class="divider"><i class="fas fa-leaf"></i></div>
-        <div class="footer-content">
-            <h2 class="medieval-title center">Establecer una Alianza</h2>
-            <div class="social-links">
-                <a href="https://github.com/evarodriguez1" target="_blank">
-                    <i class="fab fa-github"></i><span>GitHub</span>
+    <!-- FOOTER -->
+    <footer id="contacto" class="py-5 footer mt-5">
+        <div class="container text-center">
+            <div class="divider mb-4"><i class="fas fa-leaf"></i></div>
+            <h2 class="medieval-title mb-4">Establecer una Alianza</h2>
+            <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                <a href="https://github.com/evarodriguez1" class="social-link" target="_blank">
+                    <i class="fab fa-github fa-2x"></i><br><span>GitHub</span>
                 </a>
-                <a href="https://www.linkedin.com/in/maria-eva-rodriguez-040728103/" target="_blank">
-                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                <a href="https://www.linkedin.com/in/maria-eva-rodriguez-040728103/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i><br><span>LinkedIn</span>
                 </a>
-                <a href="mailto:maevarodriguez1@gmail.com">
-                    <i class="fas fa-envelope"></i><span>Email</span>
+                <a href="mailto:maevarodriguez1@gmail.com" class="social-link">
+                    <i class="fas fa-envelope fa-2x"></i><br><span>Email</span>
                 </a>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 Maria Eva Rodriguez - "No todos los que vagan están perdidos"</p>
-            </div>
+            <p class="mt-4 text-secondary">© 2026 Maria Eva Rodriguez - "No todos los que vagan están perdidos"</p>
         </div>
     </footer>
 
-    <!-- Scripts de comportamiento -->
+    <!-- SCRIPTS -->
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
