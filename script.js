@@ -51,5 +51,18 @@ function type() {
     }
 }
 
+// CIERRE AUTOMÁTICO DEL MENÚ AL TOCAR UN LINK
+const navLinks = document.querySelectorAll('.nav-link');
+const menuCollapse = document.getElementById('navbarNav');
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        if (menuCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(menuCollapse);
+            bsCollapse.hide();
+        }
+    });
+});
+
 setInterval(drawRunes, 35);
 document.addEventListener('DOMContentLoaded', type);

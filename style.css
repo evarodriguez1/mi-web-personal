@@ -54,7 +54,14 @@ body {
 }
 
 /* --- HERO --- */
-.hero { height: 70vh; }
+.hero { height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+    text-align: center;
+         
+}
 
 .glow-text {
     font-family: 'Cinzel', serif;
@@ -177,16 +184,59 @@ html, body {
     background: black;
 }
 
-/* Centrar links en menú móvil */
-@media (max-width: 991px) {
+/* --- 10. RESPONSIVE Y FIXES PARA MÓVIL --- */
+@media (max-width: 950px) {
+    /* 1. Fix para el Hero: Pantalla completa y nombre centrado/abajo */
+    .hero {
+        height: 100vh !important; /* Ocupa el 100% del alto del celu */
+        padding-top: 200px !important; /* Empujamos el nombre bien abajo */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Permitimos que el padding mande la posición */
+    }
+
+    .glow-text {
+        font-size: 2.3rem; /* Un poco más chico para evitar saltos de línea feos */
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .typewriter-container {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+
+    /* 2. Fix para el Menú: Centrado total en la hamburguesa */
     .nav-links {
         padding: 20px 0;
+        display: block; /* Cambiamos a bloque para que los items se apilen */
+        text-align: center;
     }
+
     .nav-links li {
-        margin: 10px 0;
+        margin: 15px 0;
+        display: block;
     }
+
     .btn-alianza-nav {
-        display: inline-block; /* Para que se centre bien el botón */
+        display: inline-block !important; 
         margin: 10px auto !important;
+        padding: 10px 25px !important;
+    }
+
+    /* 3. Ajustes de contenedores para que no toquen los bordes del celu */
+    .container-box {
+        padding: 25px 20px;
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    /* 4. Espaciado extra para que el Lore no se pegue al inicio */
+    #lore {
+        margin-top: 50px;
+    }
+
+    .social-links {
+        gap: 25px;
     }
 }
