@@ -158,3 +158,35 @@ body {
     color: var(--gold); text-decoration: none; transition: 0.3s;
 }
 .social-link:hover { color: white; transform: scale(1.1); }
+
+/* Corrección del Canvas y Scroll Horizontal */
+html, body {
+    overflow-x: hidden; /* Evita el espacio negro lateral */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#canvas-runas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Fuerza el ancho total de la pantalla */
+    height: 100vh;
+    z-index: -1;
+    background: black;
+}
+
+/* Centrar links en menú móvil */
+@media (max-width: 991px) {
+    .nav-links {
+        padding: 20px 0;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .btn-alianza-nav {
+        display: inline-block; /* Para que se centre bien el botón */
+        margin: 10px auto !important;
+    }
+}
