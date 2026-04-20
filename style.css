@@ -53,12 +53,22 @@ body {
     padding: 5px 20px !important;
 }
 
+/* --- COLOR DEL ICONO DE HAMBURGUESA (AÑADIR ESTO) --- */
+.navbar-toggler {
+    border-color: var(--gold) !important; /* Cambia el color del borde del cuadradito */
+}
+
+.navbar-toggler-icon {
+    /* Este código inyecta el color dorado exacto en el icono de Bootstrap */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(197, 160, 89, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 /* --- HERO --- */
 .hero { height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 120px;
+    padding-top: 60px;
     text-align: center;
          
 }
